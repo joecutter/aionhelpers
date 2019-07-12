@@ -2,6 +2,15 @@
 
 This package is designed to make your work easier.
 
+## installation 
+
+    npm i aionweb3helpers
+    
+## Usage
+
+    const aion = require("aionweb3helpers");
+    
+
 ## AVM Contract Methods (Encode)
     let data = web3.avm.contract.method("setString").inputs(["String"], ["Hello AVM"]).encode();
         const txObject = {
@@ -46,7 +55,7 @@ Using the aionhelpers package
             "privateKey": "",
             "contractAddr": "",
             "method": 'setString',
-            "decoder": "string[]"
+            "decoder": "string"
         };
       
     await aion.call(input);
@@ -61,7 +70,7 @@ Using the aionhelpers package
             "method": 'setString',
             "input_Type":[String],
             "input_Args":["Hello AVM"],
-            "decoder": "string[]"
+            "decoder": "string"
         };
       
     await aion.signedTransaction(input);
