@@ -1,0 +1,19 @@
+{
+  "name": "aionweb3helpers",
+  "version": "1.6.0",
+  "description": "A library that makes web3 usage easy with aion",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm start"
+  },
+  "keywords": [
+    "aion",
+    "web3"
+  ],
+  "author": "joecutter <cjnjenga@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "aion-web3": "^1.2.6-beta.0",
+    "log4js": "^4.5.1"
+  }
+}
