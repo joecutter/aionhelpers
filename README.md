@@ -72,8 +72,7 @@ Using the aionhelpers package
             "contractAddr": "",
             "method": 'setString',
             "input_Type":[String],
-            "input_Args":["Hello AVM"],
-            "decoder": "string"
+            "input_Args":["Hello AVM"]
         };
       
     await aion.signedTransaction(input);
