@@ -29,8 +29,8 @@ Here calling a method with arguments
    
  ## Methods and Parameters
     1. The method method accepts and handles the name of the method you wish to call from a deployed AVM Contract.
-    2. The inputs method accepts and handles the list of data types (first array) and values (second array) for the method of          an AVM Contract.
-    3. And finally, the encode method calls the web3.avm.abi.encode method on all the parameters and returns the encoded data          to be sent in a transaction or read the blockchain state.
+    2. The inputs method accepts and handles the list of data types (first array) and values (second array) for the method of an AVM Contract.
+    3. And finally, the encode method calls the web3.avm.abi.encode method on all the parameters and returns the encoded data to be sent in a transaction or read the blockchain state.
 
 
 Using the aionhelpers package
