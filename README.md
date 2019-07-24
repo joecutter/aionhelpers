@@ -27,7 +27,7 @@ This package is designed to make your work easier.
     
 Here calling a method with arguments
    
- ## Methods and Parameters
+## Methods and Parameters
     1. The method method accepts and handles the name of the method you wish to call from a deployed AVM Contract.
     2. The inputs method accepts and handles the list of data types (first array) and values (second array) for the method of an AVM Contract.
     3. And finally, the encode method calls the web3.avm.abi.encode method on all the parameters and returns the encoded data to be sent in a transaction or read the blockchain state.
@@ -35,7 +35,7 @@ Here calling a method with arguments
 
 Using the aionhelpers package
 
- ## Calling Method with Arguments
+## Calling Method with Arguments
  
     const aion = require("aionweb3helpers");
          let input = {
@@ -50,7 +50,7 @@ Using the aionhelpers package
       
     await aion.callWithArgs(input);
     
- ## Calling Method without Arguments
+## Calling Method without Arguments
  
      const aion = require("aionweb3helpers");
            let input = {
@@ -63,7 +63,7 @@ Using the aionhelpers package
       
     await aion.call(input);
     
- ## Calling Transactional Method
+## Calling Transactional Method
  
      const aion = require("aionweb3helpers");
            let input = {
