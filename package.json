@@ -1,10 +1,11 @@
 {
   "name": "aionweb3helpers",
-  "version": "2.0.0",
-  "description": "A library that makes web3 usage easy with aion",
+  "version": "2.2.0",
+  "description": "A library that makes intergration of aionweb3 easy",
   "main": "index.js",
   "scripts": {
-    "start": "npm start"
+    "start": "npm start",
+    "test": "jest"
   },
   "keywords": [
     "aion",
@@ -15,5 +16,8 @@
   "dependencies": {
     "aion-web3": "^1.2.6-beta.0",
     "log4js": "^4.5.1"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
   }
 }

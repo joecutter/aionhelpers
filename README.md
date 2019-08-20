@@ -24,16 +24,18 @@ This package is designed to make your work easier.
     let ethRes = await web3.eth.call(txObject);
     let avmRes = await web3.avm.contract.decode('string', ethRes);
     return avmRes;
+  
     
-Here calling a method with arguments
+  _Here calling a method with arguments_
    
 ## Methods and Parameters
+
     1. The method method accepts and handles the name of the method you wish to call from a deployed AVM Contract.
     2. The inputs method accepts and handles the list of data types (first array) and values (second array) for the method of an AVM Contract.
     3. And finally, the encode method calls the web3.avm.abi.encode method on all the parameters and returns the encoded data to be sent in a transaction or read the blockchain state.
 
 
-Using the aionhelpers package
+   _Using the aionhelpers package_
 
 ## Calling Method with Arguments
  

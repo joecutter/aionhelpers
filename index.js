@@ -51,6 +51,7 @@ var signedTransaction = async  (input)=> {
      });
    
 };
+
 var call = async  (input)=> {
     logger.debug("\n========================== METHOD CALL ==========================\n");
      await config(input.httpProvider).then(async (web3)=>{
@@ -74,12 +75,14 @@ var call = async  (input)=> {
             let res = await web3.eth.call(txObject);
             let avmRes = await web3.avm.contract.decode(input.decoder, res);
             logger.debug("\n\n RESPOND FROM  CONTRACT :==> %s \n\n",avmRes);
+            return avmRes;
         }catch(err){
             logger.error(err);
             throw err;
         }
     });
 };
+
 var callWithArgs = async  (input) =>{
     logger.debug("\n========================== METHOD CALL WITH ARGS ==========================\n");
     await config(input.httpProvider).then(async (web3)=>{
