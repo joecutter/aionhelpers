@@ -1,6 +1,6 @@
 # aionhelpers
 
-This package is designed to make your work easier.
+This package is designed to make your work easier when you are creating or interacting with https://theoan.com/ smart contracts. 
 
 ## installation 
 
