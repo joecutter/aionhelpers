@@ -1,7 +1,4 @@
-const Web3 = require("aion-web3");
-const log4js = require('log4js');
-const logger = log4js.getLogger('AIONWEB3_LIBRARY');
-logger.level = 'debug';
+const Web3 = require("aion-web3")
 
 var config = async (httpProvider) => {
     // Create Web3 Object
@@ -11,12 +8,12 @@ var config = async (httpProvider) => {
 };
 
 var signedTransaction = async  (input)=> {
-    logger.debug("\n========================== TRANSACTION CALL ==========================\n");
+    console.log("\n========================== TRANSACTION CALL ==========================\n");
      await config(input.httpProvider).then(async (web3)=>{
         const account = web3.eth.accounts.privateKeyToAccount(input.privateKey);
         const contractAddr = input.contractAddr;
     
-        logger.debug("input %j",input);
+        console.log("input %j",input);
         try{
             let data = web3.avm.contract.method(input.method).inputs(input.input_Type,input.input_Args).encode();
     
@@ -35,14 +32,14 @@ var signedTransaction = async  (input)=> {
                 txObject, account.privateKey
             ).then((res) => signedCall = res);
     
-            logger.debug("\n\n===============================SIGNED TRANSACTION CREATED==========================\n\n");
+            console.log("\n\n===============================SIGNED TRANSACTION CREATED==========================\n\n");
     
             const res = await web3.eth.sendSignedTransaction(signed.rawTransaction)
                 .on('receipt', receipt => {
-                    logger.debug("Receipt received!\ntxHash =", receipt.transactionHash)
+                    console.log("Receipt received!\ntxHash =", receipt.transactionHash)
                 });
     
-            logger.debug(res);
+            console.log(res);
             return res;
         }catch(err){
             logger.error(err);
@@ -53,12 +50,12 @@ var signedTransaction = async  (input)=> {
 };
 
 var call = async  (input)=> {
-    logger.debug("\n========================== METHOD CALL ==========================\n");
+    console.log("\n========================== METHOD CALL ==========================\n");
      await config(input.httpProvider).then(async (web3)=>{
         const account = web3.eth.accounts.privateKeyToAccount(input.privateKey);
         const contractAddr = input.contractAddr;
 
-        logger.debug("input %j",input);
+        console.log("input %j",input);
         try{
             let data = web3.avm.contract.method(input.method).encode();
 
@@ -74,7 +71,7 @@ var call = async  (input)=> {
             //client signing
             let res = await web3.eth.call(txObject);
             let avmRes = await web3.avm.contract.decode(input.decoder, res);
-            logger.debug("\n\n RESPOND FROM  CONTRACT :==> %s \n\n",avmRes);
+            console.log("\n\n RESPOND FROM  CONTRACT :==> %s \n\n",avmRes);
             return avmRes;
         }catch(err){
             logger.error(err);
@@ -84,12 +81,12 @@ var call = async  (input)=> {
 };
 
 var callWithArgs = async  (input) =>{
-    logger.debug("\n========================== METHOD CALL WITH ARGS ==========================\n");
+    console.log("\n========================== METHOD CALL WITH ARGS ==========================\n");
     await config(input.httpProvider).then(async (web3)=>{
         const account = web3.eth.accounts.privateKeyToAccount(input.privateKey);
         const contractAddr = input.contractAddr;
 
-        logger.debug("input %j",input);
+        console.log("input %j",input);
         try{
             let data = web3.avm.contract.method(input.method).inputs(input.input_Type,input.input_Args).encode();
 
@@ -106,7 +103,7 @@ var callWithArgs = async  (input) =>{
             //client signing
             let res = await web3.eth.call(txObject);
             let avmRes = await web3.avm.contract.decode(input.decoder, res);
-            logger.debug("\n\n RESPOND FROM  CONTRACT :==> %s \n\n",avmRes);
+            console.log("\n\n RESPOND FROM  CONTRACT :==> %s \n\n",avmRes);
             return avmRes;
         }catch(err){
             logger.error(err);
